@@ -365,3 +365,6 @@ This project is provided as-is for fraud detection and cybersecurity research pu
 
 **Last Updated:** February 2026
 **Current Version:** 1.0.0
+
+Protype Link:
+https://drive.google.com/file/d/1vywrVZ8jD7Mtg6tv1gPxCoavB0zEha4A/view?usp=sharing
