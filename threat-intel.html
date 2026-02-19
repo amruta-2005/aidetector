@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Threat Intelligence</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="dark">
+  <aside class="sidebar">
+    <div class="brand"><div class="logo">GD</div><div class="brand-text">GENAI DEFENSE</div></div>
+    <nav class="side-nav">
+      <a href="index.html">Dashboard</a>
+      <a href="content-inspector.html">Content Inspector</a>
+      <a href="incidents.html">Incidents</a>
+      <a href="model-config.html">Model Config</a>
+      <a href="model-sandbox.html">Model Sandbox</a>
+      <a href="asset-inventory.html">Asset Inventory</a>
+      <a href="dark-web.html">Dark Web Monitor</a>
+      <a href="phishing-tester.html">Phishing Tester</a>
+      <a href="deepfake-audio.html">Audio Analysis</a>
+      <a href="attachment-sandbox.html">Attachment Sandbox</a>
+      <a href="forensic-reporting.html">Forensic Reporting</a>
+      <a href="user-management.html">User Management</a>
+      <a class="active" href="threat-intel.html">Threat Intelligence</a>
+    </nav>
+    <div class="sidebar-footer"><div class="status">All AI scanners operational</div><div class="user">Alex Rivera<br><span class="muted">Admin</span></div></div>
+  </aside>
+
+  <div class="main-area">
+    <header class=\"topbar\"><div class=\"search\"><input id=\"threatSearch\" placeholder=\"Search threat indicators, campaigns, or actors...\"></div><div class=\"top-actions\"><button class=\"btn primary\">Create Campaign</button></div></header>
+    <main class=\"content\">
+      <h1 class=\"page-title\">Threat Intelligence</h1>
+      <p class=\"subtitle\">Track emerging GenAI-powered attack patterns, threat actor activity, and fraud techniques.</p>
+
+      <section class=\"stats-grid\" style=\"margin-top:18px;\">
+        <div class=\"stat card\"><div class=\"stat-title\">ACTIVE CAMPAIGNS</div><div class=\"stat-value\">18</div><div class=\"stat-sub\">Being monitored</div></div>
+        <div class=\"stat card\"><div class=\"stat-title\">KNOWN THREAT ACTORS</div><div class=\"stat-value\">47</div><div class=\"stat-sub\">In database</div></div>
+        <div class=\"stat card\"><div class=\"stat-title\">EMERGING PATTERNS</div><div class=\"stat-value\">12</div><div class=\"stat-sub danger\">Require investigation</div></div>
+      </section>
+
+      <section class=\"card\" style=\"padding:18px;margin-top:18px;\">
+        <div class=\"card-title\">Active Threat Campaigns</div>
+        <div style=\"margin-top:12px;display:flex;flex-direction:column;gap:10px;\">
+          <div style=\"padding:12px;background:#0c1420;border-radius:6px;border-left:3px solid #ff6b6b;\">
+            <div style=\"display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;\">
+              <div>
+                <strong>Operation Phantom Defense - Wave 3</strong>
+                <div class=\"muted\" style=\"font-size:11px;\">GenAI-Phishing Blitz • Attributed to APT-28</div>
+              </div>
+              <span class=\"pill danger\">ACTIVE</span>
+            </div>
+            <div style=\"font-size:12px;color:var(--muted);\">AI-generated spear-phishing emails targeting C-suite. 247 organizations targeted. 34 confirmed breaches. Success rate: 8.2%</div>
+          </div>
+
+          <div style=\"padding:12px;background:#0c1420;border-radius:6px;border-left:3px solid #ffb400;\">
+            <div style=\"display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;\">
+              <div>
+                <strong>Deepfake Banking Extortion Ring</strong>
+                <div class=\"muted\" style=\"font-size:11px;\">Financial Services Targeting • Unknown Actors</div>
+              </div>
+              <span class=\"pill med\">MONITORING</span>
+            </div>
+            <div style=\"font-size:12px;color:var(--muted);\">Coordinated deepfake audio calls posing as executives requesting fund transfers. 12 confirmed incidents across banking sector. Estimated loss: $4.2M</div>
+          </div>
+
+          <div style=\"padding:12px;background:#0c1420;border-radius:6px;border-left:3px solid #2f7bff;\">
+            <div style=\"display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;\">
+              <div>
+                <strong>Ransomware-as-a-Payload Distribution</strong>
+                <div class=\"muted\" style=\"font-size:11px;\">Enterprise Targeting • eCrime Actors</div>
+              </div>
+              <span class=\"pill\">OBSERVED</span>
+            </div>
+            <div style=\"font-size:12px;color:var(--muted);\">AI-generated polymorphic malware payloads disguised in benign documents. Runtime obfuscation detected. 561 samples in the wild</div>
+          </div>
+        </div>
+      </section>
+
+      <section class=\"card\" style=\"padding:18px;margin-top:18px;\">
+        <div class=\"card-title\">Top Threat Actors</div>
+        <div style=\"display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px;\">
+          <div style=\"padding:8px;background:#0c1420;border-radius:4px;border-left:3px solid #ff6b6b;\">
+            <strong style=\"font-size:12px;\">APT-28 (Fancy Bear)</strong>
+            <div class=\"muted\" style=\"font-size:11px;\">State-sponsored • Uses GPT-4 for social engineering</div>
+          </div>
+          <div style=\"padding:8px;background:#0c1420;border-radius:4px;border-left:3px solid #ffb400;\">
+            <strong style=\"font-size:12px;\">LockBit Affiliates</strong>
+            <div class=\"muted\" style=\"font-size:11px;\">Ransomware group • AI payload generation</div>
+          </div>
+          <div style=\"padding:8px;background:#0c1420;border-radius:4px;border-left:3px solid #2f7bff;\">
+            <strong style=\"font-size:12px;\">Unknown eCrime Collective</strong>
+            <div class=\"muted\" style=\"font-size:11px;\">Financial sector targeting • Deepfake capability</div>
+          </div>
+          <div style=\"padding:8px;background:#0c1420;border-radius:4px;border-left:3px solid #0d8a5f;\">
+            <strong style=\"font-size:12px;\">Chinese APT (PLA Unit)</strong>
+            <div class=\"muted\" style=\"font-size:11px;\">IP theft • Prompt injection research</div>
+          </div>
+        </div>
+      </section>
+
+      <section class=\"card\" style=\"padding:18px;margin-top:18px;\">
+        <div class=\"card-title\">Emerging Fraud Techniques (Last 7 Days)</div>
+        <div style=\"margin-top:12px;display:flex;flex-direction:column;gap:8px;\">
+          <div style=\"padding:10px;background:#0c1420;border-radius:6px;border-left:3px solid #ff6b6b;\">
+            <strong style=\"font-size:12px;\">Hybrid Deepfake + VoIP Spoofing</strong>
+            <div class=\"muted\" style=\"font-size:11px;margin-top:4px;\">New attack vector combining audio deepfakes with caller ID spoofing for account takeovers</div>
+          </div>
+          <div style=\"padding:10px;background:#0c1420;border-radius:6px;border-left:3px solid #ff6b6b;\">
+            <strong style=\"font-size:12px;\">Automated Jailbreak Kit Available</strong>
+            <div class=\"muted\" style=\"font-size:11px;margin-top:4px;\">BreachForums listing 'Universal LLM Jailbreak v3.0' - 50+ successful techniques documented</div>
+          </div>
+          <div style=\"padding:10px;background:#0c1420;border-radius:6px;border-left:3px solid #ffb400;\">
+            <strong style=\"font-size:12px;\">Cookie-Stealing Phishing Variant</strong>
+            <div class=\"muted\" style=\"font-size:11px;margin-top:4px;\">AI models generating highly personalized phishing lures with 18% success rate</div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>

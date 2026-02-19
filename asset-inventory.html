@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Asset Inventory</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="dark">
+  <aside class="sidebar">
+    <div class="brand"><div class="logo">GD</div><div class="brand-text">GENAI DEFENSE</div></div>
+    <nav class="side-nav">
+      <a href="index.html">Dashboard</a>
+      <a href="content-inspector.html">Content Inspector</a>
+      <a href="incidents.html">Incidents</a>
+      <a href="model-config.html">Model Config</a>
+      <a href="model-sandbox.html">Model Sandbox</a>
+      <a class="active" href="asset-inventory.html">Asset Inventory</a>
+      <a href="dark-web.html">Dark Web Monitor</a>
+      <a href="phishing-tester.html">Phishing Tester</a>
+      <a href="deepfake-audio.html">Audio Analysis</a>
+      <a href="attachment-sandbox.html">Attachment Sandbox</a>
+      <a href="forensic-reporting.html">Forensic Reporting</a>
+      <a href="user-management.html">User Management</a>
+      <a href="threat-intel.html">Threat Intelligence</a>
+    </nav>
+    <div class="sidebar-footer"><div class="status">All AI scanners operational</div><div class="user">Alex Rivera<br><span class="muted">Admin</span></div></div>
+  </aside>
+
+  <div class="main-area">
+    <header class="topbar"><div class="search"><input id="assetSearch" placeholder="Search assets by type, domain, or IP..."></div><div class="top-actions"><button class="btn primary">Add Asset</button></div></header>
+    <main class="content">
+      <h1 class="page-title">Asset Inventory</h1>
+      <p class="subtitle">Track critical assets vulnerable to GenAI-driven fraud and monitor exposure risk.</p>
+
+      <section class="stats-grid" style="margin-top:18px;">
+        <div class="stat card"><div class="stat-title">TOTAL ASSETS</div><div class="stat-value">2,847</div><div class="stat-sub">Active monitoring</div></div>
+        <div class="stat card"><div class="stat-title">EXPOSED ASSETS</div><div class="stat-value">241</div><div class="stat-sub danger">Requiring action</div></div>
+        <div class="stat card"><div class="stat-title">CRITICAL ASSETS</div><div class="stat-value">47</div><div class="stat-sub danger">VIP accounts</div></div>
+      </section>
+
+      <section class="card" style="padding:18px;margin-top:18px;">
+        <div class="card-title">Asset Categories</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px;margin-top:12px;">
+          <div style="padding:12px;background:#0c1420;border-radius:6px;text-align:center;">
+            <div style="font-size:24px;font-weight:700;color:#2f7bff;">1,241</div>
+            <div style="font-size:12px;margin-top:4px;">Domain Names</div>
+          </div>
+          <div style="padding:12px;background:#0c1420;border-radius:6px;text-align:center;">
+            <div style="font-size:24px;font-weight:700;color:#ff6b6b;">841</div>
+            <div style="font-size:12px;margin-top:4px;">User Accounts</div>
+          </div>
+          <div style="padding:12px;background:#0c1420;border-radius:6px;text-align:center;">
+            <div style="font-size:24px;font-weight:700;color:#ffb400;">512</div>
+            <div style="font-size:12px;margin-top:4px;">Email Addresses</div>
+          </div>
+          <div style="padding:12px;background:#0c1420;border-radius:6px;text-align:center;">
+            <div style="font-size:24px;font-weight:700;color:#0d8a5f;">253</div>
+            <div style="font-size:12px;margin-top:4px;">IP Ranges</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" style="padding:18px;margin-top:18px;">
+        <div class="card-title">Critical Assets Under Monitoring</div>
+        <div style="margin-top:12px;">
+          <table style="width:100%;border-collapse:collapse;">
+            <thead>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+                <th style="text-align:left;padding:8px;color:var(--muted);font-weight:700;font-size:12px;">ASSET</th>
+                <th style="text-align:left;padding:8px;color:var(--muted);font-weight:700;font-size:12px;">TYPE</th>
+                <th style="text-align:left;padding:8px;color:var(--muted);font-weight:700;font-size:12px;">EXPOSURE STATUS</th>
+                <th style="text-align:left;padding:8px;color:var(--muted);font-weight:700;font-size:12px;">LAST SCAN</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+                <td style="padding:10px;"><strong>ciso-ops@enterprise.com</strong></td>
+                <td style="padding:10px;font-size:12px;">Email</td>
+                <td style="padding:10px;"><span class="pill danger">IN LEAK</span></td>
+                <td style="padding:10px;color:var(--muted);font-size:12px;">12m ago</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+                <td style="padding:10px;"><strong>api.internal.corp.com</strong></td>
+                <td style="padding:10px;font-size:12px;">Domain</td>
+                <td style="padding:10px;"><span class="pill med">MONITORED</span></td>
+                <td style="padding:10px;color:var(--muted);font-size:12px;">2h ago</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+                <td style="padding:10px;"><strong>CEO (Jonathan S.)</strong></td>
+                <td style="padding:10px;font-size:12px;">VIP Account</td>
+                <td style="padding:10px;"><span class="pill">SECURE</span></td>
+                <td style="padding:10px;color:var(--muted);font-size:12px;">5m ago</td>
+              </tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+                <td style="padding:10px;"><strong>104.28.14.0/24</strong></td>
+                <td style="padding:10px;font-size:12px;">IP Range</td>
+                <td style="padding:10px;"><span class="pill med">1 MENTION</span></td>
+                <td style="padding:10px;color:var(--muted);font-size:12px;">1h ago</td>
+              </tr>
+              <tr>
+                <td style="padding:10px;"><strong>hr-team@enterprise.com</strong></td>
+                <td style="padding:10px;font-size:12px;">Email Group</td>
+                <td style="padding:10px;"><span class="pill">SECURE</span></td>
+                <td style="padding:10px;color:var(--muted);font-size:12px;">34m ago</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>

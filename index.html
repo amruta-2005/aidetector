@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GenAI Defense Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="dark">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="logo">GD</div>
+      <div class="brand-text">GENAI DEFENSE</div>
+    </div>
+    <nav class="side-nav">
+      <a href="index.html">Dashboard</a>
+      <a href="content-inspector.html">Content Inspector</a>
+      <a href="incidents.html">Incidents</a>
+      <a href="model-config.html">Model Config</a>
+      <a href="model-sandbox.html">Model Sandbox</a>
+      <a href="asset-inventory.html">Asset Inventory</a>
+      <a href="dark-web.html">Dark Web Monitor</a>
+      <a href="phishing-tester.html">Phishing Tester</a>
+      <a href="deepfake-audio.html">Audio Analysis</a>
+      <a href="attachment-sandbox.html">Attachment Sandbox</a>
+      <a href="forensic-reporting.html">Forensic Reporting</a>
+      <a href="user-management.html">User Management</a>
+      <a href="threat-intel.html">Threat Intelligence</a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="status">All AI scanners operational</div>
+      <div class="user">Alex Rivera<br><span class="muted">Admin</span></div>
+    </div>
+  </aside>
+
+  <div class="main-area">
+    <header class="topbar">
+      <div class="search">
+        <input placeholder="Search incidents, assets or threats...">
+      </div>
+      <div class="top-actions">
+        <button id="exportBtn" class="btn primary">Export Report</button>
+      </div>
+    </header>
+
+    <main class="content">
+      <h1 class="page-title">Security Posture Overview</h1>
+      <p class="subtitle">Real-time GenAI threat landscape analysis and mitigation.</p>
+
+      <section class="stats-grid">
+        <div class="stat card">
+          <div class="stat-title">CREDENTIALS EXPOSED</div>
+          <div class="stat-value" data-target="1240">0</div>
+          <div class="stat-sub">+12% since last 24h</div>
+        </div>
+
+        <div class="stat card">
+          <div class="stat-title">PHISHING SITES SCANNED</div>
+          <div class="stat-value" data-target="45200">0</div>
+          <div class="stat-sub">+5.4% active scanning</div>
+        </div>
+
+        <div class="stat card">
+          <div class="stat-title">MODEL JAILBREAKS</div>
+          <div class="stat-value" data-target="12">0</div>
+          <div class="stat-sub danger">3 critical</div>
+        </div>
+      </section>
+
+      <section class="layout-grid">
+        <div class="card chart-card">
+          <div class="card-title">Risk Posture Distribution</div>
+          <canvas id="riskDonut" width="220" height="220"></canvas>
+          <div class="donut-center">84<br><span class="muted">Score</span></div>
+          <div class="legend">
+            <div><span class="dot low"></span> Low 70%</div>
+            <div><span class="dot med"></span> Med 15%</div>
+            <div><span class="dot high"></span> High 15%</div>
+          </div>
+        </div>
+
+        <div class="card feed-card">
+          <div class="card-title">Live Incident Feed <span class="badge live">LIVE</span></div>
+          <div id="incidentList" class="incident-list"></div>
+          <div class="feed-actions"><a href="#">View All Active Incidents</a></div>
+        </div>
+      </section>
+
+      <section class="lower-grid">
+        <div class="card small"> 
+          <div class="card-title">Threat Mitigation Success</div>
+          <div class="meter"><div style="width:98.4%"></div></div>
+          <div class="muted">Phishing Mitigation 98.4% • Model Guardrail Efficiency 100%</div>
+        </div>
+
+        <div class="card small"> 
+          <div class="card-title">Notifications</div>
+          <div class="muted">Possible 0-day LLM vulnerability detected</div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/nav.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

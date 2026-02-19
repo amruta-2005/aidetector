@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dark Web Exposure Monitor</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="dark">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="logo">GD</div>
+      <div class="brand-text">GENAI DEFENSE</div>
+    </div>
+    <nav class="side-nav">
+      <a href="index.html">Dashboard</a>
+      <a href="content-inspector.html">Content Inspector</a>
+      <a href="incidents.html">Incidents</a>
+      <a href="model-config.html">Model Config</a>
+      <a href="model-sandbox.html">Model Sandbox</a>
+      <a href="asset-inventory.html">Asset Inventory</a>
+      <a class="active" href="dark-web.html">Dark Web Monitor</a>
+      <a href="phishing-tester.html">Phishing Tester</a>
+      <a href="deepfake-audio.html">Audio Analysis</a>
+      <a href="attachment-sandbox.html">Attachment Sandbox</a>
+      <a href="forensic-reporting.html">Forensic Reporting</a>
+      <a href="user-management.html">User Management</a>
+      <a href="threat-intel.html">Threat Intelligence</a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="status">Dark Web Crawler: Active</div>
+      <div class="user">Alex Rivera<br><span class="muted">SOC Lead</span></div>
+    </div>
+  </aside>
+
+  <div class="main-area">
+    <header class="topbar">
+      <div class="search">
+        <input id="darkWebSearch" placeholder="Search dark web forums, leaks, or assets...">
+      </div>
+      <div class="top-actions">
+        <button id="rescanBtn" class="btn">Alert Settings</button>
+        <button id="rescanBtn" class="btn primary">Force Global Rescan</button>
+      </div>
+    </header>
+
+    <main class="content">
+      <h1 class="page-title">DARK WEB EXPOSURE MONITOR</h1>
+      <p class="subtitle">Monitoring underground marketplaces and GenAI-assisted data dumps for organizational assets.</p>
+
+      <section style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px;">
+        <div class="card">
+          <div class="card-title">EXPOSURE TIMELINE</div>
+          <canvas id="exposureChart" width="300" height="150" style="display:block;"></canvas>
+          <div class="muted" style="margin-top:8px;font-size:12px;">1,247 total exposures detected in 30 days</div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">THREAT SOURCE DISTRIBUTION</div>
+          <div style="padding:12px;">
+            <div style="margin-bottom:10px;">
+              <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+                <span style="font-size:12px;">BreachForums</span>
+                <span style="font-weight:700;">342</span>
+              </div>
+              <div style="height:6px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden;">
+                <div style="width:35%;height:100%;background:#ff6b6b;"></div>
+              </div>
+            </div>
+            <div style="margin-bottom:10px;">
+              <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+                <span style="font-size:12px;">Exploit.in</span>
+                <span style="font-weight:700;">289</span>
+              </div>
+              <div style="height:6px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden;">
+                <div style="width:29%;height:100%;background:#ffb400;"></div>
+              </div>
+            </div>
+            <div style="margin-bottom:10px;">
+              <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+                <span style="font-size:12px;">Paste Sites</span>
+                <span style="font-weight:700;">156</span>
+              </div>
+              <div style="height:6px;background:rgba(255,255,255,0.1);border-radius:3px;overflow:hidden;">
+                <div style="width:16%;height:100%;background:#2f7bff;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="wide-card card">
+        <div class="wide-left">
+          <div style="font-weight:700;margin-bottom:4px;">GEOGRAPHIC EXPOSURE HOTSPOTS</div>
+          <div class="muted" style="font-size:12px;margin-bottom:12px;">Active data leak origin points</div>
+          <div class="exposure-map"> 
+            <span class="map-dot" style="left:15%;top:35%;box-shadow:0 0 12px rgba(255,107,107,0.6);"></span>
+            <span class="map-dot" style="left:45%;top:55%;box-shadow:0 0 12px rgba(255,180,0,0.6);"></span>
+            <span class="map-dot" style="left:70%;top:40%;box-shadow:0 0 12px rgba(255,107,107,0.6);"></span>
+            <span class="map-dot" style="left:25%;top:65%;box-shadow:0 0 8px rgba(47,123,255,0.4);"></span>
+          </div>
+        </div>
+        <div class="wide-right">
+          <div style="padding:12px;background:#0c1420;border-radius:6px;margin-bottom:12px;">
+            <div class="muted" style="font-size:11px;">CRITICAL EXPOSURE ZONES</div>
+            <div style="font-size:20px;font-weight:700;margin:6px 0;">12</div>
+            <div class="muted" style="font-size:11px;">Monitored globally</div>
+          </div>
+          <div style="padding:12px;background:#0c1420;border-radius:6px;">
+            <div class="muted" style="font-size:11px;">FORUM MENTIONS</div>
+            <div style="font-size:20px;font-weight:700;margin:6px 0;color:#ff6b6b;">842</div>
+            <div class="muted" style="font-size:11px;">Last 24 hours</div>
+          </div>
+        </div>
+      </section>
+
+      <section style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:18px;">
+        <div class="card col">
+          <div class="card-title">EXPOSED CREDENTIALS <span class="muted" style="font-size:11px;">2,481 TOTAL</span></div>
+          <div class="cred-list" id="credList">
+            <loading>Loading...</loading>
+          </div>
+        </div>
+
+        <div class="card col">
+          <div class="card-title">FORUM INTELLIGENCE <span class="muted" style="font-size:11px;">REAL-TIME</span></div>
+          <div id="forumList" class="forum-list">
+            <loading>Loading...</loading>
+          </div>
+        </div>
+
+        <div class="card col">
+          <div class="card-title">VIP ASSET WATCHLIST</div>
+          <div class="watchlist" id="watchList">
+            <loading>Loading...</loading>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" style="padding:18px;margin-top:18px;">
+        <div class="card-title">Recent GenAI-Generated Fraud Datasets</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px;">
+          <div style="padding:12px;background:#0c1420;border-radius:6px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+              <div>
+                <strong style="font-size:13px;">Synthetic Profile Dataset v2.3</strong>
+                <div class="muted" style="font-size:11px;">BreachForums • 8h ago</div>
+              </div>
+              <span class="pill danger">CRITICAL</span>
+            </div>
+            <div style="font-size:12px;color:var(--muted);margin:8px 0;">5.2M AI-generated employee profiles with credentials for social engineering</div>
+            <div style="display:flex;gap:8px;">
+              <button class="btn" style="flex:1;padding:6px;font-size:11px;">Download IOCs</button>
+              <button class="btn" style="flex:1;padding:6px;font-size:11px;">Report</button>
+            </div>
+          </div>
+
+          <div style="padding:12px;background:#0c1420;border-radius:6px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+              <div>
+                <strong style="font-size:13px;">Phishing Template Pack (GPT-4)</strong>
+                <div class="muted" style="font-size:11px;">Exploit.in • 23h ago</div>
+              </div>
+              <span class="pill med">HIGH</span>
+            </div>
+            <div style="font-size:12px;color:var(--muted);margin:8px 0;">1,847 AI-written phishing templates targeting financial institutions</div>
+            <div style="display:flex;gap:8px;">
+              <button class="btn" style="flex:1;padding:6px;font-size:11px;">Download IOCs</button>
+              <button class="btn" style="flex:1;padding:6px;font-size:11px;">Report</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/nav.js"></script>
+  <script src="js/darkweb.js"></script>
+</body>
+</html>

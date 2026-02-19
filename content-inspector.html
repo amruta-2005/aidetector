@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Phishing & Content Inspector</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="dark">
+  <aside class="sidebar">
+    <div class="brand"><div class="logo">GD</div><div class="brand-text">GENAI DEFENSE</div></div>
+    <nav class="side-nav">
+      <a href="index.html">Dashboard</a>
+      <a class="active" href="content-inspector.html">Content Inspector</a>
+      <a href="incidents.html">Incidents</a>
+      <a href="model-config.html">Model Config</a>
+      <a href="model-sandbox.html">Model Sandbox</a>
+      <a href="asset-inventory.html">Asset Inventory</a>
+      <a href="dark-web.html">Dark Web Monitor</a>
+      <a href="phishing-tester.html">Phishing Tester</a>
+      <a href="deepfake-audio.html">Audio Analysis</a>
+      <a href="attachment-sandbox.html">Attachment Sandbox</a>
+      <a href="forensic-reporting.html">Forensic Reporting</a>
+      <a href="user-management.html">User Management</a>
+      <a href="threat-intel.html">Threat Intelligence</a>
+    </nav>
+    <div class="sidebar-footer"><div class="status">All AI scanners operational</div><div class="user">Alex Rivera<br><span class="muted">Admin</span></div></div>
+  </aside>
+
+  <div class="main-area">
+    <header class="topbar">
+      <div class="search"><input id="searchInput" placeholder="Search incidents, IPs, or email hash..."></div>
+      <div class="top-actions"><button class="btn" id="exportContent">Export Report</button><button class="btn primary" id="analyzeBtn">Analyze Sample</button></div>
+    </header>
+
+    <main class="content">
+      <h1 class="page-title">Phishing & Content Inspector</h1>
+      <p class="subtitle">AI-powered detection of GenAI-generated phishing emails and credential exposure.</p>
+
+      <section class="card" style="padding:18px;margin-top:18px;">
+        <div class="card-title">Upload Content for Analysis</div>
+        <div style="display:flex;gap:12px;margin-top:12px;">
+          <input type="text" id="emailInput" placeholder="Paste email content or full message..." style="flex:1;padding:10px;border-radius:6px;border:0;background:#0b1726;color:#dfeefe;">
+          <button class="btn primary" id="analyzeContentBtn">Scan Content</button>
+        </div>
+      </section>
+
+      <div class="two-column" style="margin-top:18px;">
+        <div class="left-panel card">
+          <div class="card-title">Email Analysis</div>
+          
+          <div class="meta" style="background:#0c1420;padding:12px;border-radius:6px;margin-bottom:12px;">
+            <div style="margin-bottom:8px;"><strong>From:</strong> <span id="emailFrom">security-alert@microsoft-cloud.net</span> <span class="pill danger">UNVERIFIED</span></div>
+            <div style="margin-bottom:8px;"><strong>To:</strong> <span id="emailTo">ciso-ops@enterprise-corp.com</span></div>
+            <div style="margin-bottom:8px;"><strong>Subject:</strong> <span id="emailSubject">URGENT: Suspicious Login Detected - Action Required</span></div>
+            <div><strong>Date:</strong> <span id="emailDate">Oct 24, 2023, 14:32:11 UTC</span></div>
+          </div>
+
+          <div class="card-subtitle">Email Body Content</div>
+          <pre class="email-body" id="emailBody">Dear Valued User,
+
+Our automated systems have detected an unauthorized login attempt from an unrecognized IP address (192.168.1.1) in Eastern Europe.
+
+To restore full access, verify your identity through our secure gateway portal:
+https://secure.microsoft-cloud.net/auth/verify?token=...
+
+Failure to complete this verification will result in permanent suspension.
+
+Corporate Security Systems
+Global Operations Center</pre>
+
+          <div style="margin-top:16px;">
+            <div class="card-subtitle">Extracted URLs</div>
+            <div id="urlsList" style="padding:8px;background:#0c1420;border-radius:6px;">
+              <div style="padding:6px;margin-bottom:6px;border-left:3px solid #ff6b6b;">
+                <div class="muted" style="font-size:11px;">SUSPICIOUS DOMAIN</div>
+                <strong>https://secure.microsoft-cloud.net/auth/verify</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-panel card">
+          <div class="card-block">
+            <div class="card-title">AI DETECTION SCORE</div>
+            <canvas id="contentDonut" width="160" height="160" style="display:block;margin:0 auto;"></canvas>
+            <div class="analysis-value" style="margin-top:-90px;">
+              <div style="font-size:32px;font-weight:900;color:#ff6b6b;text-align:center;" id="aiScore">88%</div>
+              <div style="text-align:center;color:var(--muted);font-size:12px;">AI-GENERATED</div>
+            </div>
+          </div>
+
+          <div class="card-block">
+            <div class="card-title">THREAT INDICATORS</div>
+            <div id="threatIndicators">
+              <div style="padding:6px;border-left:3px solid #ff6b6b;margin-bottom:6px;">
+                <strong>Urgency Manipulation</strong>
+                <div class="muted" style="font-size:12px;">Artificial time pressure tactics detected</div>
+              </div>
+              <div style="padding:6px;border-left:3px solid #ff6b6b;margin-bottom:6px;">
+                <strong>Domain Spoofing</strong>
+                <div class="muted" style="font-size:12px;">microsoft-cloud.net mimics Microsoft</div>
+              </div>
+              <div style="padding:6px;border-left:3px solid #ffb400;margin-bottom:6px;">
+                <strong>Generic Greeting</strong>
+                <div class="muted" style="font-size:12px;">No personalization detected</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-block">
+            <div class="card-title">CREDENTIAL EXPOSURE</div>
+            <div id="credentialStatus">
+              <div style="color:#0d8a5f;font-weight:700;margin-bottom:6px;">✓ No Known Breaches</div>
+              <div class="muted" style="font-size:12px;">This email not found in 23 known dark web databases</div>
+            </div>
+          </div>
+
+          <div class="card-block">
+            <div class="card-title">ATTACHMENTS</div>
+            <div id="attachmentsList" style="padding:8px;background:#0c1420;border-radius:6px;">
+              <div style="padding:6px;">
+                <strong>invoice_#291.pdf.exe</strong>
+                <div class="pill danger">MALWARE</div>
+                <div class="muted" style="font-size:11px;">Detonated - Registry modification attempted</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-block" style="margin-top:16px;">
+            <label style="display:flex;align-items:center;gap:8px;cursor:pointer;margin-bottom:8px;">
+              <input type="checkbox" id="quarantineToggle"> <span>Quarantine User Account</span>
+            </label>
+            <button class="btn primary" id="remediateBtn" style="width:100%;margin-bottom:8px;">Generate Remediation Plan</button>
+            <button class="btn" id="blockSenderBtn" style="width:100%;">Block Sender Domain</button>
+          </div>
+        </div>
+      </div>
+
+      <section class="card" style="padding:18px;margin-top:18px;">
+        <div class="card-title">Detailed Analysis Report</div>
+        <div id="analysisReport" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px;">
+          <div style="padding:12px;background:#0c1420;border-radius:6px;">
+            <strong>Phishing Confidence</strong>
+            <div style="font-size:24px;color:#ff6b6b;margin:8px 0;">92.4%</div>
+            <div class="muted" style="font-size:12px;">Consistent with AI-written phishing patterns</div>
+          </div>
+          <div style="padding:12px;background:#0c1420;border-radius:6px;">
+            <strong>Grammar & Style Analysis</strong>
+            <div style="border-radius:4px;height:6px;background:rgba(255,255,255,0.1);margin:8px 0;overflow:hidden;">
+              <div style="width:85%;height:100%;background:linear-gradient(90deg,#ff6b6b,#ffb400);"></div>
+            </div>
+            <div class="muted" style="font-size:12px;">Minor inconsistencies in voice; likely synthetic</div>
+          </div>
+          <div style="padding:12px;background:#0c1420;border-radius:6px;">
+            <strong>Social Engineering Tactics</strong>
+            <div style="margin:8px 0;"><span class="pill med">HIGH</span></div>
+            <div class="muted" style="font-size:12px;">Fear + urgency + authority combination</div>
+          </div>
+          <div style="padding:12px;background:#0c1420;border-radius:6px;">
+            <strong>Credential Extraction Likelihood</strong>
+            <div style="font-size:24px;color:#ff6b6b;margin:8px 0;">87%</div>
+            <div class="muted" style="font-size:12px;">High-risk phishing vector detected</div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/nav.js"></script>
+  <script src="js/content.js"></script>
+</body>
+</html>

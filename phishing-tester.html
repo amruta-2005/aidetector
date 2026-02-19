@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Phishing & Cookie Tester</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="dark">
+  <aside class="sidebar">
+    <div class="brand"><div class="logo">GD</div><div class="brand-text">GENAI DEFENSE</div></div>
+    <nav class="side-nav">
+      <a href="index.html">Dashboard</a>
+      <a href="content-inspector.html">Content Inspector</a>
+      <a href="incidents.html">Incidents</a>
+      <a href="model-config.html">Model Config</a>
+      <a href="model-sandbox.html">Model Sandbox</a>
+      <a href="asset-inventory.html">Asset Inventory</a>
+      <a href="dark-web.html">Dark Web Monitor</a>
+      <a class="active" href="phishing-tester.html">Phishing Tester</a>
+      <a href="deepfake-audio.html">Audio Analysis</a>
+      <a href="attachment-sandbox.html">Attachment Sandbox</a>
+      <a href="forensic-reporting.html">Forensic Reporting</a>
+      <a href="user-management.html">User Management</a>
+      <a href="threat-intel.html">Threat Intelligence</a>
+    </nav>
+    <div class="sidebar-footer"><div class="status">All AI scanners operational</div><div class="user">Alex Rivera<br><span class="muted">Admin</span></div></div>
+  </aside>
+
+  <div class="main-area">
+    <header class="topbar">
+      <div class="search"><input id="urlInput" placeholder="Target URL for analysis..."></div>
+      <div class="top-actions"><button class="btn primary" id="scanSiteBtn">Scan Site</button></div>
+    </header>
+    
+    <main class="content">
+      <h1 class="page-title">Phishing & Cookie Tester</h1>
+      <p class="subtitle">Analyze suspicious URLs for spoofing, credential phishing, and cookie manipulation attacks.</p>
+
+      <section class="card" style="margin-top:18px;padding:18px;">
+        <div class="card-title">URL Analysis Controls</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:12px;">
+          <button class="btn" id="whoisBtn">WHOIS Lookup</button>
+          <button class="btn" id="dnsBtn">DNS Records</button>
+          <button class="btn" id="certBtn">SSL Certificate Check</button>
+        </div>
+      </section>
+
+      <div class="two-column" style="margin-top:18px;">
+        <div class="left-panel card">
+          <div class="card-title">Website Analysis Results</div>
+          
+          <div style="padding:12px;background:#0c1420;border-radius:6px;margin-bottom:12px;">
+            <div style="margin-bottom:8px;"><strong>Target URL:</strong> <span id="targetUrl">https://paypal-verify.net/secure/login</span></div>
+            <div style="margin-bottom:8px;"><strong>Domain Age:</strong> <span id="domainAge">3 days</span> <span class="pill danger">NEWLY REGISTERED</span></div>
+            <div style="margin-bottom:8px;"><strong>Registrar:</strong> <span id="registrar">NameCheap (suspicious provider)</span></div>
+            <div><strong>Geolocation:</strong> <span id="geoLocation">Russia (mismatched from legitimate source)</span></div>
+          </div>
+
+          <div class="card-subtitle">Similarity to Legitimate Site</div>
+          <div style="padding:8px;background:#0c1420;border-radius:6px;margin-bottom:12px;">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <div style="flex:1;height:24px;border-radius:4px;background:rgba(255,255,255,0.1);overflow:hidden;">
+                <div style="width:94%;height:100%;background:#ff6b6b;"></div>
+              </div>
+              <div id="similarityScore">94%</div>
+            </div>
+            <div class="muted" style="font-size:12px;margin-top:4px;">High visual similarity to legitimate PayPal site - LIKELY PHISHING</div>
+          </div>
+
+          <div class="card-subtitle">Detected Issues</div>
+          <div id="issuesList" style="display:flex;flex-direction:column;gap:8px;">
+            <div style="padding:8px;border-left:3px solid #ff6b6b;">
+              <strong>Domain Typosquatting</strong>
+              <div class="muted" style="font-size:12px;">paypal-verify.net vs. paypal.com</div>
+            </div>
+            <div style="padding:8px;border-left:3px solid #ff6b6b;">
+              <strong>Self-Signed Certificate</strong>
+              <div class="muted" style="font-size:12px;">SSL certificate validation failed - High risk</div>
+            </div>
+            <div style="padding:8px;border-left:3px solid #ff6b6b;">
+              <strong>Form Injection Detected</strong>
+              <div class="muted" style="font-size:12px;">Credential capture form with external submission</div>
+            </div>
+            <div style="padding:8px;border-left:3px solid #ffb400;">
+              <strong>No SPF/DKIM Records</strong>
+              <div class="muted" style="font-size:12px;">Email authentication missing</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-panel card">
+          <div class="card-block">
+            <div class="card-title">PHISHING RISK SCORE</div>
+            <canvas id="phishingDonut" width="160" height="160" style="display:block;margin:0 auto;"></canvas>
+            <div class="analysis-value" style="margin-top:-90px;">
+              <div style="font-size:32px;font-weight:900;color:#ff6b6b;text-align:center;" id="phishScore">95%</div>
+              <div style="text-align:center;color:var(--muted);font-size:12px;">CRITICAL RISK</div>
+            </div>
+          </div>
+
+          <div class="card-block">
+            <div class="card-title">COOKIE ANALYSIS</div>
+            <div id="cookieAnalysis" style="display:flex;flex-direction:column;gap:6px;">
+              <div style="padding:6px;background:#0c1420;border-radius:4px;">
+                <strong style="font-size:12px;">Session Cookie</strong>
+                <div class="muted" style="font-size:11px;">ID: sess_8f2k9... • Expires: Never</div>
+              </div>
+              <div style="padding:6px;background:#0c1420;border-radius:4px;">
+                <strong style="font-size:12px;">Tracking Cookie</strong>
+                <div class="muted" style="font-size:11px;">ID: track_2j4d... • 3rd-party</div>
+              </div>
+              <div style="padding:6px;background:#0c1420;border-radius:4px;border-left:3px solid #ff6b6b;">
+                <strong style="font-size:12px;">Credential Cookie (SUSPICIOUS)</strong>
+                <div class="muted" style="font-size:11px;">Stores plaintext credentials - HIGH RISK</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-block">
+            <div class="card-title">SPOOFING DETECTION</div>
+            <div style="padding:6px;margin-bottom:6px;border-left:3px solid #ff6b6b;">
+              <strong style="font-size:12px;">DNS Spoofing: DETECTED</strong>
+              <div class="muted" style="font-size:11px;">Subdomain hijacking indicators</div>
+            </div>
+            <div style="padding:6px;margin-bottom:6px;border-left:3px solid #ff6b6b;">
+              <strong style="font-size:12px;">Logo Hijacking: DETECTED</strong>
+              <div class="muted" style="font-size:11px;">Legitimate brand assets misused</div>
+            </div>
+          </div>
+
+          <div class="card-block" style="margin-top:16px;">
+            <button class="btn danger" id="blockUrlBtn" style="width:100%;margin-bottom:8px;">Block URL Globally</button>
+            <button class="btn" id="reportPhishBtn" style="width:100%;margin-bottom:8px;">Report to Authorities</button>
+            <button class="btn" id="exportPhishBtn" style="width:100%;">Export Analysis</button>
+          </div>
+        </div>
+      </div>
+
+      <section class="card" style="padding:18px;margin-top:18px;">
+        <div class="card-title">HTTP Response Headers & SSL Analysis</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px;">
+          <div style="padding:12px;background:#0c1420;border-radius:6px;">
+            <strong>Security Headers</strong>
+            <div style="font-size:12px;margin-top:8px;color:var(--muted);">
+              <div>✗ Content-Security-Policy: Missing</div>
+              <div>✗ X-Frame-Options: Missing</div>
+              <div>✗ X-Content-Type-Options: Missing</div>
+              <div>✓ HSTS: Present</div>
+            </div>
+          </div>
+          <div style="padding:12px;background:#0c1420;border-radius:6px;">
+            <strong>SSL Certificate Details</strong>
+            <div style="font-size:12px;margin-top:8px;color:var(--muted);">
+              <div>Issuer: Let's Encrypt (Self-signed)</div>
+              <div>Valid From: 2024-01-01</div>
+              <div>Valid Until: 2025-01-01</div>
+              <div style="color:#ff6b6b;">Status: INVALID CHAIN</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" style="padding:18px;margin-top:18px;">
+        <div class="card-title">Recent Phishing Tests on Similar Domains</div>
+        <div id="relatedPhishing" style="display:flex;flex-direction:column;gap:10px;">
+          <div style="padding:12px;background:#0c1420;border-radius:6px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <div>
+                <strong>paypal-secure.net</strong>
+                <div class="muted" style="font-size:12px;">Detected 156 days ago</div>
+              </div>
+              <span class="pill danger">ACTIVE</span>
+            </div>
+          </div>
+          <div style="padding:12px;background:#0c1420;border-radius:6px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <div>
+                <strong>pp-authenticate.com</strong>
+                <div class="muted" style="font-size:12px;">Detected 89 days ago</div>
+              </div>
+              <span class="pill">BLOCKED</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/nav.js"></script>
+  <script src="js/phishing.js"></script>
+</body>
+</html>

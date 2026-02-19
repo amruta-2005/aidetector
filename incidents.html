@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Incidents</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="dark">
+  <aside class="sidebar">
+    <div class="brand"><div class="logo">GD</div><div class="brand-text">GENAI DEFENSE</div></div>
+    <nav class="side-nav">
+      <a href="index.html">Dashboard</a>
+      <a href="content-inspector.html">Content Inspector</a>
+      <a class="active" href="incidents.html">Incidents</a>
+      <a href="model-config.html">Model Config</a>
+      <a href="model-sandbox.html">Model Sandbox</a>
+      <a href="asset-inventory.html">Asset Inventory</a>
+      <a href="dark-web.html">Dark Web Monitor</a>
+      <a href="phishing-tester.html">Phishing Tester</a>
+      <a href="deepfake-audio.html">Audio Analysis</a>
+      <a href="attachment-sandbox.html">Attachment Sandbox</a>
+      <a href="forensic-reporting.html">Forensic Reporting</a>
+      <a href="user-management.html">User Management</a>
+      <a href="threat-intel.html">Threat Intelligence</a>
+    </nav>
+    <div class="sidebar-footer"><div class="status">All AI scanners operational</div><div class="user">Alex Rivera<br><span class="muted">Admin</span></div></div>
+  </aside>
+
+  <div class="main-area">
+    <header class="topbar">
+      <div class="search"><input id="incidentSearch" placeholder="Search incidents by type, status, or reference..."></div>
+      <div class="top-actions">
+        <button class="btn" id="filterBtn">Filter</button>
+        <button class="btn primary" id="createIncidentBtn">New Incident</button>
+      </div>
+    </header>
+    
+    <main class="content">
+      <h1 class="page-title">Incidents</h1>
+      <p class="subtitle">All detected threats and security events across the GenAI Defense system.</p>
+
+      <section class="card" style="padding:18px;margin-top:18px;">
+        <div class="card-title">Quick Filters</div>
+        <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;">
+          <button class="btn" id="filterActive">Active (12)</button>
+          <button class="btn" id="filterCritical">Critical (3)</button>
+          <button class="btn" id="filterInvestigating">Investigating (7)</button>
+          <button class="btn" id="filterResolved">Resolved (156)</button>
+          <button class="btn" id="filterAll">Show All</button>
+        </div>
+      </section>
+
+      <section class="card" style="padding:18px;margin-top:18px;">
+        <div class="card-title">Incident List</div>
+        <table style="width:100%;border-collapse:collapse;margin-top:12px;">
+          <thead>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+              <th style="text-align:left;padding:8px;color:var(--muted);font-weight:700;font-size:12px;">INCIDENT ID</th>
+              <th style="text-align:left;padding:8px;color:var(--muted);font-weight:700;font-size:12px;">TYPE</th>
+              <th style="text-align:left;padding:8px;color:var(--muted);font-weight:700;font-size:12px;">SEVERITY</th>
+              <th style="text-align:left;padding:8px;color:var(--muted);font-weight:700;font-size:12px;">STATUS</th>
+              <th style="text-align:left;padding:8px;color:var(--muted);font-weight:700;font-size:12px;">DETECTED</th>
+              <th style="text-align:right;padding:8px;color:var(--muted);font-weight:700;font-size:12px;">ACTION</th>
+            </tr>
+          </thead>
+          <tbody id="incidentTableBody">
+            
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);hover:background-color:rgba(255,255,255,0.02);">
+              <td style="padding:12px;"><strong>INC-2024-001245</strong></td>
+              <td style="padding:12px;">AI Phishing Email</td>
+              <td style="padding:12px;"><span class="pill danger">CRITICAL</span></td>
+              <td style="padding:12px;"><span class="severity sev-crit">BLOCKED</span></td>
+              <td style="padding:12px;color:var(--muted);font-size:12px;">14:22:15 UTC</td>
+              <td style="padding:12px;text-align:right;"><a href="#" style="color:var(--accent);text-decoration:none;font-size:12px;">Review</a></td>
+            </tr>
+
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:12px;"><strong>INC-2024-001244</strong></td>
+              <td style="padding:12px;">Deepfake Audio Detected</td>
+              <td style="padding:12px;"><span class="pill danger">CRITICAL</span></td>
+              <td style="padding:12px;"><span class="severity sev-crit">FLAGGED</span></td>
+              <td style="padding:12px;color:var(--muted);font-size:12px;">14:18:03 UTC</td>
+              <td style="padding:12px;text-align:right;"><a href="#" style="color:var(--accent);text-decoration:none;font-size:12px;">Review</a></td>
+            </tr>
+
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:12px;"><strong>INC-2024-001243</strong></td>
+              <td style="padding:12px;">Prompt Injection Attempt</td>
+              <td style="padding:12px;"><span class="pill danger">CRITICAL</span></td>
+              <td style="padding:12px;"><span class="severity sev-crit">BLOCKED</span></td>
+              <td style="padding:12px;color:var(--muted);font-size:12px;">14:05:41 UTC</td>
+              <td style="padding:12px;text-align:right;"><a href="#" style="color:var(--accent);text-decoration:none;font-size:12px;">Review</a></td>
+            </tr>
+
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:12px;"><strong>INC-2024-001242</strong></td>
+              <td style="padding:12px;">Credential Exposure</td>
+              <td style="padding:12px;"><span class="pill med">HIGH</span></td>
+              <td style="padding:12px;"><span class="severity sev-med">INVESTIGATING</span></td>
+              <td style="padding:12px;color:var(--muted);font-size:12px;">13:45:10 UTC</td>
+              <td style="padding:12px;text-align:right;"><a href="#" style="color:var(--accent);text-decoration:none;font-size:12px;">Review</a></td>
+            </tr>
+
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:12px;"><strong>INC-2024-001241</strong></td>
+              <td style="padding:12px;">Malware Detonation</td>
+              <td style="padding:12px;"><span class="pill med">HIGH</span></td>
+              <td style="padding:12px;"><span class="severity sev-med">ANALYZING</span></td>
+              <td style="padding:12px;color:var(--muted);font-size:12px;">13:32:47 UTC</td>
+              <td style="padding:12px;text-align:right;"><a href="#" style="color:var(--accent);text-decoration:none;font-size:12px;">Review</a></td>
+            </tr>
+
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:12px;"><strong>INC-2024-001240</strong></td>
+              <td style="padding:12px;">Phishing URL Detection</td>
+              <td style="padding:12px;"><span class="pill med">HIGH</span></td>
+              <td style="padding:12px;"><span class="severity sev-med">MITIGATED</span></td>
+              <td style="padding:12px;color:var(--muted);font-size:12px;">13:15:22 UTC</td>
+              <td style="padding:12px;text-align:right;"><a href="#" style="color:var(--accent);text-decoration:none;font-size:12px;">Review</a></td>
+            </tr>
+
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:12px;"><strong>INC-2024-001239</strong></td>
+              <td style="padding:12px;">Data Leak Detection</td>
+              <td style="padding:12px;"><span class="pill med">HIGH</span></td>
+              <td style="padding:12px;"><span class="severity sev-med">QUARANTINED</span></td>
+              <td style="padding:12px;color:var(--muted);font-size:12px;">12:58:05 UTC</td>
+              <td style="padding:12px;text-align:right;"><a href="#" style="color:var(--accent);text-decoration:none;font-size:12px;">Review</a></td>
+            </tr>
+
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:12px;"><strong>INC-2024-001238</strong></td>
+              <td style="padding:12px;">Cookie Manipulation</td>
+              <td style="padding:12px;"><span class="pill">MEDIUM</span></td>
+              <td style="padding:12px;"><span class="severity sev-low">MONITORED</span></td>
+              <td style="padding:12px;color:var(--muted);font-size:12px;">12:41:33 UTC</td>
+              <td style="padding:12px;text-align:right;"><a href="#" style="color:var(--accent);text-decoration:none;font-size:12px;">Review</a></td>
+            </tr>
+
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:12px;"><strong>INC-2024-001237</strong></td>
+              <td style="padding:12px;">Phishing Email Campaign</td>
+              <td style="padding:12px;"><span class="pill">MEDIUM</span></td>
+              <td style="padding:12px;"><span class="severity sev-low">RESOLVED</span></td>
+              <td style="padding:12px;color:var(--muted);font-size:12px;">12:15:47 UTC</td>
+              <td style="padding:12px;text-align:right;"><a href="#" style="color:var(--accent);text-decoration:none;font-size:12px;">Review</a></td>
+            </tr>
+
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:12px;"><strong>INC-2024-001236</strong></td>
+              <td style="padding:12px;">Jailbreak Attempt</td>
+              <td style="padding:12px;"><span class="pill">MEDIUM</span></td>
+              <td style="padding:12px;"><span class="severity sev-low">CONTAINED</span></td>
+              <td style="padding:12px;color:var(--muted);font-size:12px;">11:52:14 UTC</td>
+              <td style="padding:12px;text-align:right;"><a href="#" style="color:var(--accent);text-decoration:none;font-size:12px;">Review</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="card" style="padding:18px;margin-top:18px;">
+        <div class="card-title">Incident Statistics</div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:12px;">
+          <div style="padding:12px;background:#0c1420;border-radius:6px;">
+            <div class="muted" style="font-size:12px;">Total Incidents (30d)</div>
+            <div style="font-size:28px;font-weight:700;margin:8px 0;">1,247</div>
+            <div class="muted" style="font-size:11px;">+18% from previous period</div>
+          </div>
+          <div style="padding:12px;background:#0c1420;border-radius:6px;">
+            <div class="muted" style="font-size:12px;">Critical Incidents</div>
+            <div style="font-size:28px;font-weight:700;margin:8px 0;color:#ff6b6b;">23</div>
+            <div class="muted" style="font-size:11px;">All responded within SLA</div>
+          </div>
+          <div style="padding:12px;background:#0c1420;border-radius:6px;">
+            <div class="muted" style="font-size:12px;">Resolution Rate</div>
+            <div style="font-size:28px;font-weight:700;margin:8px 0;color:#0d8a5f;">94.3%</div>
+            <div class="muted" style="font-size:11px;">Avg resolution: 2.4 hours</div>
+          </div>
+          <div style="padding:12px;background:#0c1420;border-radius:6px;">
+            <div class="muted" style="font-size:12px;">Active Investigations</div>
+            <div style="font-size:28px;font-weight:700;margin:8px 0;">7</div>
+            <div class="muted" style="font-size:11px;">Est. resolution: 4.2 hours</div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/nav.js"></script>
+  <script src="js/incidents.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Deepfake Audio Analysis Lab</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="dark">
+  <aside class="sidebar">
+    <div class="brand"><div class="logo">GD</div><div class="brand-text">GENAI DEFENSE</div></div>
+    <nav class="side-nav">
+      <a href="index.html">Dashboard</a>
+      <a href="content-inspector.html">Content Inspector</a>
+      <a href="incidents.html">Incidents</a>
+      <a href="model-config.html">Model Config</a>
+      <a href="model-sandbox.html">Model Sandbox</a>
+      <a href="asset-inventory.html">Asset Inventory</a>
+      <a href="dark-web.html">Dark Web Monitor</a>
+      <a href="phishing-tester.html">Phishing Tester</a>
+      <a class="active" href="deepfake-audio.html">Audio Analysis</a>
+      <a href="attachment-sandbox.html">Attachment Sandbox</a>
+      <a href="forensic-reporting.html">Forensic Reporting</a>
+      <a href="user-management.html">User Management</a>
+      <a href="threat-intel.html">Threat Intelligence</a>
+    </nav>
+    <div class="sidebar-footer"><div class="status">Deepfake Detection Engine: active_v3.2</div><div class="user">Alex Rivera<br><span class="muted">SOC Lead</span></div></div>
+  </aside>
+
+  <div class="main-area">
+    <header class="topbar">
+      <div class="search"><input placeholder="Search call IDs or voice prints..."></div>
+      <div class="top-actions"><button class="btn" id="acousticBtn">Acoustic Report</button><button class="btn danger" id="blockCaller">Block Caller ID</button></div>
+    </header>
+
+    <main class="content">
+      <h1 class="page-title">DEEPFAKE AUDIO ANALYSIS LAB</h1>
+      <div class="audio-player card">
+        <button id="playBtn" class="btn">Play Recording</button>
+        <div class="waveform"><canvas id="waveCanvas" width="800" height="80"></canvas></div>
+      </div>
+
+      <section class="layout-grid">
+        <div class="card">
+          <div class="card-title">PROBABILITY OF AI SYNTHESIS</div>
+          <div class="analysis-large">92.4% <span class="muted">SYNTHETIC VOICE DETECTED</span></div>
+          <div class="muted">Neural architecture detected: Parallel WaveGAN with HiFi-GAN vocoder.</div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">CALL METADATA</div>
+          <div class="muted">Origin: VOIP (Unknown)</div>
+          <div class="muted">Duration: 02:45.12</div>
+          <div class="muted">Network jitter: 42ms</div>
+        </div>
+      </section>
+
+      <section class="lower-grid">
+        <div class="card">
+          <div class="card-title">EXTRACTED MFCC FEATURES</div>
+          <div class="muted">Spectral centroid, chroma shifts, high variance detected</div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">ANALYSIS ANOMALIES</div>
+          <ul class="muted">
+            <li>Non-Human Artifacts detected</li>
+            <li>Rhythmic discontinuity observed</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/nav.js"></script>
+  <script src="js/audio.js"></script>
+</body>
+</html>

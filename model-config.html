@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Local Model & Dataset Config</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="dark">
+  <aside class="sidebar">
+    <div class="brand"><div class="logo">GD</div><div class="brand-text">GENAI DEFENSE</div></div>
+    <nav class="side-nav">
+      <a href="index.html">Dashboard</a>
+      <a href="content-inspector.html">Content Inspector</a>
+      <a href="incidents.html">Incidents</a>
+      <a class="active" href="model-config.html">Model Config</a>
+      <a href="model-sandbox.html">Model Sandbox</a>
+      <a href="asset-inventory.html">Asset Inventory</a>
+      <a href="dark-web.html">Dark Web Monitor</a>
+      <a href="phishing-tester.html">Phishing Tester</a>
+      <a href="deepfake-audio.html">Audio Analysis</a>
+      <a href="attachment-sandbox.html">Attachment Sandbox</a>
+      <a href="forensic-reporting.html">Forensic Reporting</a>
+      <a href="user-management.html">User Management</a>
+      <a href="threat-intel.html">Threat Intelligence</a>
+    </nav>
+    <div class="sidebar-footer"><div class="status">All AI scanners operational</div><div class="user">Alex Rivera<br><span class="muted">Admin</span></div></div>
+  </aside>
+  
+
+  <div class="main-area">
+    <header class="topbar"><div class="search"><input id="modelSearch" placeholder="Search models or datasets..."></div><div class="top-actions"><button class="btn primary">Sync All Nodes</button></div></header>
+    <main class="content">
+      <h1 class="page-title">Local Model & Dataset Config</h1>
+      <p class="subtitle">Managing enterprise-grade LLMs and secure training sets on local hardware.</p>
+      
+      <section class="stats-grid">
+        <div class="stat card"><div class="stat-title">VRAM USAGE</div><div class="stat-value">12.4 GB</div><div class="stat-sub">of 24 GB • 51.7%</div></div>
+        <div class="stat card"><div class="stat-title">NPU UTILIZATION</div><div class="stat-value">15.8%</div><div class="stat-sub">Optimal performance</div></div>
+        <div class="stat card"><div class="stat-title">ACTIVE MODELS</div><div class="stat-value">04</div><div class="stat-sub">Production services</div></div>
+      </section>
+
+      <section style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px;">
+        <div class="card">
+          <div class="card-title">Active Models</div>
+          <div style="padding:12px;display:flex;flex-direction:column;gap:10px;">
+            <div style="padding:10px;background:#0c1420;border-radius:6px;border-left:3px solid #0d8a5f;">
+              <div style="display:flex;justify-content:space-between;">
+                <strong style="font-size:13px;">Mistral-7B (Ollama)</strong>
+                <span style="font-size:12px;color:#0d8a5f;">● Online</span>
+              </div>
+              <div class="muted" style="font-size:11px;margin-top:4px;">3.2 GB • Phishing Detection</div>
+            </div>
+            <div style="padding:10px;background:#0c1420;border-radius:6px;border-left:3px solid #0d8a5f;">
+              <div style="display:flex;justify-content:space-between;">
+                <strong style="font-size:13px;">LLaMA2-7B</strong>
+                <span style="font-size:12px;color:#0d8a5f;">● Online</span>
+              </div>
+              <div class="muted" style="font-size:11px;margin-top:4px;">6.8 GB • Content Analysis</div>
+            </div>
+            <div style="padding:10px;background:#0c1420;border-radius:6px;border-left:3px solid #0d8a5f;">
+              <div style="display:flex;justify-content:space-between;">
+                <strong style="font-size:13px;">Fine-tuned Detector</strong>
+                <span style="font-size:12px;color:#0d8a5f;">● Online</span>
+              </div>
+              <div class="muted" style="font-size:11px;margin-top:4px;">1.4 GB • AI Text Detection</div>
+            </div>
+            <div style="padding:10px;background:#0c1420;border-radius:6px;border-left:3px solid #ffb400;">
+              <div style="display:flex;justify-content:space-between;">
+                <strong style="font-size:13px;">MFCC Audio Model</strong>
+                <span style="font-size:12px;color:#ffb400;">● Warm Up</span>
+              </div>
+              <div class="muted" style="font-size:11px;margin-top:4px;">0.9 GB • Deepfake Detection</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Training Datasets</div>
+          <div style="padding:12px;display:flex;flex-direction:column;gap:10px;">
+            <div style="padding:10px;background:#0c1420;border-radius:6px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;">
+                <div>
+                  <strong style="font-size:13px;">Enron Dataset</strong>
+                  <div class="muted" style="font-size:11px;">0.5M emails</div>
+                </div>
+                <span style="font-size:11px;color:#0d8a5f;">✓ Cached</span>
+              </div>
+            </div>
+            <div style="padding:10px;background:#0c1420;border-radius:6px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;">
+                <div>
+                  <strong style="font-size:13px;">Phishing Email Corpus</strong>
+                  <div class="muted" style="font-size:11px;">28.4K samples</div>
+                </div>
+                <span style="font-size:11px;color:#0d8a5f;">✓ Cached</span>
+              </div>
+            </div>
+            <div style="padding:10px;background:#0c1420;border-radius:6px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;">
+                <div>
+                  <strong style="font-size:13px;">Audio Deepfake Set</strong>
+                  <div class="muted" style="font-size:11px;">12.8K clips</div>
+                </div>
+                <span style="font-size:11px;color:#0d8a5f;">✓ Processing</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" style="padding:18px;margin-top:18px;">
+        <div class="card-title">Model Configuration & Guardrails</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px;">
+          <div>
+            <label style="display:block;margin-bottom:4px;font-weight:700;font-size:12px;">Temperature (Creativity)</label>
+            <input type="range" min="0" max="2" step="0.1" value="0.7" style="width:100%;">
+            <div class="muted" style="font-size:11px;margin-top:4px;">Current: 0.7 (Balanced)</div>
+          </div>
+          <div>
+            <label style="display:block;margin-bottom:4px;font-weight:700;font-size:12px;">Max Tokens</label>
+            <input type="number" value="2048" style="width:100%;padding:6px;border-radius:4px;border:0;background:#0b1726;color:#dfeefe;">
+          </div>
+        </div>
+        <div style="margin-top:16px;">
+          <label style="display:flex;align-items:center;gap:8px;cursor:pointer;margin-bottom:8px;">
+            <input type="checkbox" checked> <span style="font-size:12px;">Enable Content Filtering</span>
+          </label>
+          <label style="display:flex;align-items:center;gap:8px;cursor:pointer;margin-bottom:8px;">
+            <input type="checkbox" checked> <span style="font-size:12px;">Block Credential Leakage</span>
+          </label>
+          <label style="display:flex;align-items:center;gap:8px;cursor:pointer;">
+            <input type="checkbox" checked> <span style="font-size:12px;">Enforce Topic Restrictions</span>
+          </label>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>
